@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
     background-color: blueviolet;
+    padding: 10px;
   } 
 
 .item a {
@@ -9,4 +10,16 @@
 
 .item.active a {
   color: lightgreen;
+}
+
+.navFriends {
+  margin-top: 20px;
+}
+
+.iconFriends {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: chartreuse;
+  border-radius: 15px;
 }
