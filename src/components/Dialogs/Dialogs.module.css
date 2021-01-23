@@ -7,6 +7,9 @@
 
 .dialogsItems {
     padding: 10px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
 }
 
 .dialogs .active {
@@ -17,4 +20,7 @@
     display: grid;
     grid-auto-rows: min-content;
     padding: 10px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
 }

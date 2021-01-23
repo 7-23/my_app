@@ -1,7 +1,8 @@
 import React from 'react';
 import s from './Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = (props) => {
+
     return (
         <nav className={s.nav}>
             <div className={s.navItem}>
@@ -25,7 +26,7 @@ const Navbar = () => {
             <div className={s.navFriends}>
                 <h3>Friends</h3>
                 <div>
-                    <span className={s.iconFriends}></span>
+                    <span className={s.iconFriends}><img src={props.state[1].avatar} /></span>
                     Den
                 </div>
                 <div>
