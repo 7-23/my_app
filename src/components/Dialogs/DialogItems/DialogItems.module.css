@@ -13,8 +13,10 @@
     color: gold;
 }
 
+.dialog img{
+    border-radius: 25px;
+}
+
 .messages {
-    display: grid;
-    grid-auto-rows: min-content;
     padding: 10px;
 }
