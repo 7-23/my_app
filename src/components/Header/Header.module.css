@@ -1,8 +1,15 @@
 .header { 
+    display: grid;
+    grid-template-columns: 2fr 12fr;
     grid-area: h;
     background-color: green;
   }
   
    .header img { 
     width: 50px;
+    margin: 5px;
+   }
+
+   h1 {
+     margin: 5px;
    }

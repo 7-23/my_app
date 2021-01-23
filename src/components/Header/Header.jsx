@@ -4,7 +4,12 @@ import s from './Header.module.css';
 const Header = () => {
     return (
         <header className={s.header}>
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4uVybGnywRPumMmSPzhUgMrg4NoKQYSgL2A&usqp=CAU' />
+            <div className={s.logo}>
+                <img src='https://images.vectorhq.com/images/previews/20e/round-logo-psd-452270.png' />
+            </div>
+            <div className={s.mainWord}>
+                <h1>Приложение</h1>
+            </div>
         </header>
     );
 }
