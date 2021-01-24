@@ -12,7 +12,8 @@ const MyPosts = (props) => {
     let addPost = () => {
         
         let text = newPostElement.current.value;
-         alert(text);
+        props.addPost(text);
+        newPostElement.current.value = '';
     }
 
     return (
@@ -22,7 +23,7 @@ const MyPosts = (props) => {
             </h3>
             <div>
                 <div>
-                    <textarea ref={newPostElement}>
+                    <textarea ref={newPostElement} onInput={ () => alert(newPostElement.current.value)}>
 
                     </textarea>
                 </div>
