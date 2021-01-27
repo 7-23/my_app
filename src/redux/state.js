@@ -5,7 +5,9 @@ let state = {
         posts: [
             { id: 1, message: 'Hi, how are you?', likesCount: 12 },
             { id: 2, message: 'It\'s cool', likesCount: 11 }
-        ]
+        ],
+        newPostText: 'it-kamasutra.com'
+
         
     },
     messagesPage: {
@@ -18,18 +20,43 @@ let state = {
             { id: 1, message: 'Hi' },
             { id: 2, message: 'Yo' },
             { id: 3, message: 'Yapp' }
-        ]
+        ],
+        newMessageText: 'samuray'
     }
 };
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0 
     };
 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 4,
+        message: state.messagesPage.newMessageText
+    };
+
+    state.messagesPage.messages.push(newMessage);
+    state.messagesPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.messagesPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 

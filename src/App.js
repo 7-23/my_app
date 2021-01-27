@@ -10,7 +10,6 @@ import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 const App = (props) => {
-
   return (
 
     <div className='app-wrapper'>
@@ -18,10 +17,15 @@ const App = (props) => {
       <Navbar state={props.state.messagesPage.dialogs} />
       <div className='app-wrapper-content'>
         <Route path='/profile' render={() => <Profile
-          state={props.state.profilePage}
+          profilePage={props.state.profilePage}
           addPost={props.addPost}
+          updateNewPostText={props.updateNewPostText}
            />} />
-        <Route path='/dialogs' render={() => <Dialogs state={props.state.messagesPage} />} />
+        <Route path='/dialogs' render={() => <Dialogs
+          state={props.state.messagesPage}
+          addMessage={props.addMessage}
+          updateNewMessageText={props.updateNewMessageText}
+        />} />
         <Route path='/news' component={News} />
         <Route path='/music' component={Music} />
         <Route path='/settings' component={Settings} />
