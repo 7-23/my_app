@@ -9,7 +9,6 @@ const Profile = (props) => {
             <ProfileInfo />
             <MyPostsContainer
                 store={props.store}
-                dispatch = {props.dispatch}
             />
         </div>
     );
