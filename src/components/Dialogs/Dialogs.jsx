@@ -5,10 +5,9 @@ import Messages from "./Messages/Messages";
 import { sendMessageActionCreator, updateNewMessageBodyActionCreator } from '../../redux/dialogs-reducer';
 
 const Dialogs = (props) => {
+    let dialogsElements = props.messagesPage.dialogs.map(d => <DialogItems name={d.name} id={d.id} avatar={d.avatar} />);
 
-    let dialogsElements = props.state.dialogs.map(d => <DialogItems name={d.name} id={d.id} avatar={d.avatar} />);
-
-    let messageElements = props.state.messages.map( m => <Messages message={m.message} />)
+    let messageElements = props.messagesPage.messages.map( m => <Messages message={m.message} />)
 
     let newMessageElement = React.createRef();
 
@@ -29,7 +28,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 { messageElements }
-                <textarea onChange={onMessageChage} ref={newMessageElement} value={props.state.newMessageBody}/>
+                <textarea onChange={onMessageChage} ref={newMessageElement} value={props.messagesPage.newMessageBody}/>
                 <button onClick={ sendMessage }>
                     Add message
                 </button>

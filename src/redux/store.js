@@ -1,5 +1,6 @@
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
+import navbarbarReducer from "./navbar-reducer";
 
 let store = {
     _state: {
@@ -24,6 +25,14 @@ let store = {
                 { id: 3, message: 'Yapp' }
             ],
             newMessageBody: 'samuray'
+        },
+        navbarState: {
+            friends: [
+                { id: 1, name: 'Dmitrii', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoUPnIvTEoBZ_kjIuLl2OO-zlMZsCRFxWptQ&usqp=CAU"' },
+                { id: 2, name: 'Den', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlWTEHQYhtXFkWHqAQOaQs2m3hqY78t4sNg&usqp=CAU' },
+                { id: 3, name: 'Jeka', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyw9Q7cEeqOOBgsn0fWAp-SaM0yxHtH0EneQ&usqp=CAU' }
+            ]
+
         }
     },
 
@@ -44,10 +53,10 @@ let store = {
 
 
     dispatch(action) {
-        
+        debugger;
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
-
+        this._state.navbarState = navbarReducer(this._state.navbarState, action);
         this._callSubscriber();
 
     }
